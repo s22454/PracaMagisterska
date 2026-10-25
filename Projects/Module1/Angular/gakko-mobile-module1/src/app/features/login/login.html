@@ -1,0 +1,44 @@
+<div class="login-container">
+
+    <div class="top-section">
+        <img src="/pjatk_logo.png" alt="Logo PJATK">
+        <p>POLSKO-JAPOŃSKA AKADEMIA <br /> TECHNIK KOMPUTEROWYCH</p>
+    </div>
+
+    <form [formGroup]="signinForm" (ngSubmit)="signin()">
+
+        <div class="input-field">
+            <label>Email</label>
+            <input id="email" type="email" formControlName="email" placeholder="email...">
+        </div>
+
+        <div class="input-field">
+            <label>Password</label>
+            <input id="password" type="password" formControlName="password" placeholder="password...">
+        </div>
+
+        @if (errorMessage()) {
+            <div class="alert-error">{{ errorMessage() }}</div>
+        }
+
+        <div class="buttons-container">
+            <div id="signin-button">
+                <button type="submit">
+                    <span>Sign in</span>
+                </button>
+            </div>
+
+            @if (hasSavedToken()) {
+                <div class="divider">
+                    <span>OR</span>
+                </div>
+
+                <div id="biometric-button">
+                    <button type="button" (click)="signinWithBiometrics()">
+                        <span>Use biometric</span>
+                    </button>
+                </div>
+            }
+        </div>
+    </form>
+</div>
