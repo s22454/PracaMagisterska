@@ -5,3 +5,5 @@
 **Promotor:** *Paweł Lenkiewicz* <br/>
 **Promotor techniczny:** *Piotr Gago* <br/>
 **Uczelnia:** *PJWSTK*
+
+This project is tested with BrowserStack.
